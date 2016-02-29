@@ -3,11 +3,18 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   # GET /articles.json
+  # def index
+  #   @articles = Article.all
+    
+  # end
   def index
-    @articles = Article.all
+    if params[:search]
+      @articles = Article.search(params[:search]).order("created_at DESC")
+    else
+      @articles = Article.order("created_at DESC")
+    end
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
-
   # GET /articles/1
   # GET /articles/1.json
   def show
@@ -62,6 +69,8 @@ class ArticlesController < ApplicationController
     end
   end
 
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
