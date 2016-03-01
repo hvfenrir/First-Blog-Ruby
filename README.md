@@ -4,9 +4,9 @@
 
 Submitted by: **Pham Quang Vinh**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
-URL: **https://dashboard.heroku.com/apps/safe-lake-28634/deploy/heroku-git**
+URL: **http://safe-lake-28634.herokuapp.com/articles**
 
 ## User Stories
 
