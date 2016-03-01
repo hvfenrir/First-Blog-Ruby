@@ -1,7 +1,9 @@
 class Article < ActiveRecord::Base
 	
   # attr_accessible :title, :body
- 
+  has_many :comments
+  validates :title, presence: true,
+                    length: { minimum: 5 }
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
   # It returns the articles whose titles contain one or more words that form the query

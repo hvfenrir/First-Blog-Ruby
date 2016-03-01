@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+	<p>
+  		<strong>Title:</strong>
+	  <%= @article.title %>
+	</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+	<p>
+	  <strong>Body:</strong>
+	  <%= @article.body %>
+	</p>
+	<div class="box-comments">
+		<div class="comment-title"><h4>Comments</h4></div>
+		<%= render @article.comments%>
+	</div>
+	<h2>Add a comment:</h2>
+	<%= render 'comments/form' %>
+	<%= link_to 'Edit', edit_article_path(@article) %> |
+	<%= link_to 'Back', articles_path %>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
